@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: FlexGigs-Laravel
+    env: php
+    repo: https://github.com/AndresT13/FlexGigs-Laravel
+    buildCommand: "composer install --optimize-autoloader --no-dev"
+    startCommand: "php artisan migrate --force && php artisan serve --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: APP_ENV
