@@ -1,0 +1,103 @@
+body {
+  background-color: #1e123d !important;
+}
+body.bg-gradient {
+  background: linear-gradient(135deg, #1e123d, #6b3fa0);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin: 0;
+  padding: 2rem;
+}
+
+.terms-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease;
+}
+
+.terms-box h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.terms-box h2 {
+  font-size: 1.3rem;
+  color: #d8b9ff;
+  margin-top: 1.5rem;
+}
+
+.terms-box p {
+  color: #e6e0f5;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.btn-home {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #a16ae8;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #c19df2;
+  color: #1e123d;
+}
+
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-switch select {
+  background: transparent;
+  border: 1px solid #a16ae8;
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-weight: 500;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #d3cfe7;
+  text-align: center;
+}
+
+footer a {
+  color: #d8b9ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

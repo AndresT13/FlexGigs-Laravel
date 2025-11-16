@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../img/favicon.ico" sizes="42x42" />
+
+    <title>Error 404 - FlexGigs</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../css/error.css" />
+  </head>
+
+  <body class="bg-gradient">
+    <!-- Selector de idioma -->
+    <div class="language-switch">
+      <select id="lang-selector" class="form-select-sm">
+        <option value="en">EN</option>
+        <option value="es" selected>ES</option>
+        <option value="pt">PT</option>
+      </select>
+    </div>
+
+    <!-- Caja de error -->
+    <div class="error-box">
+      <div class="logo" data-lang="error_logo">💡 FlexGigs</div>
+      <h1 class="error-code" data-lang="error_title">Página No Encontrada</h1>
+      <p class="error-message" data-lang="error_message">
+        Lo sentimos, la página que estás buscando no existe o fue movida.
+      </p>
+      <a href="../index.html" class="btn-home" data-lang="error_button">
+        Volver al Inicio
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      © 2025 FlexGigs |
+      <a href="../pages/privacy.html" data-lang="error_footer_privacy">
+        Política de Privacidad
+      </a>
+      |
+      <a href="../pages/help.html" data-lang="error_footer_help">Ayuda</a>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/error-lang.js" defer></script>
+  </body>
+</html>

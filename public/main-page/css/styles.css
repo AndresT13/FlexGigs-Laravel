@@ -1,0 +1,452 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #0d0630;
+    color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(13, 6, 48, 0.85);
+    color: #fff;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e3e9ff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #e3e9ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #f4a261;
+}
+
+/* Hero Carousel */
+#heroCarousel img {
+    height: 85vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    bottom: 20%;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #f4a261;
+}
+
+/* Sections */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+}
+
+.service img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service h3 {
+    margin-top: 15px;
+    color: #f4a261;
+}
+
+/* About */
+.about p {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* Clients */
+.clients {
+    background: #150e45;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.testimonial {
+    background: #1d1555;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 320px;
+    font-style: italic;
+    color: #e3e9ff;
+}
+
+/* Contact */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 30px auto 0;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.contact button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact button:hover {
+    background: #357ab8;
+}
+
+/* Footer */
+footer {
+    background: #0b0427;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f4a261;
+}
+
+@media (max-width: 768px) {
+    #heroCarousel img {
+        height: 60vh;
+    }
+    .carousel-caption h1 {
+        font-size: 1.4rem;
+    }
+    .carousel-caption p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Overlay degradado oscuro sobre imágenes del carrusel */
+#heroCarousel .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+/*  Asegura que el texto quede por encima del overlay */
+#heroCarousel .carousel-caption {
+    position: absolute;
+    z-index: 2;
+}
+
+/* Efecto de aparición (fade-in) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a secciones específicas */
+.service,
+.testimonial {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Retraso progresivo para que aparezcan en orden */
+.service:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.service:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.service:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.service:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.testimonial:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.testimonial:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.testimonial:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+    /* Carrusel */
+    #heroCarousel img {
+        height: 60vh;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    /* Espaciados más cómodos */
+    section {
+        padding: 60px 6%;
+    }
+
+    /* Servicios */
+    .service img {
+        height: 180px;
+    }
+
+    /* Testimonios */
+    .testimonial {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+}
+
+.lang-select {
+    background: #1a1442;
+    color: #f4a261;
+    border: 1px solid #f4a261;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.lang-select:hover {
+    background: #f4a261;
+    color: #1a1442;
+}
+
+/*  Contenedor de acciones del header */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*  Botón de Login */
+.btn-login {
+    background: linear-gradient(90deg, #a16ae8, #8b5cf6);
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-login:hover {
+    background: linear-gradient(90deg, #b98afc, #a16ae8);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/*  Ajuste para el selector de idioma */
+.lang-select {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: 500;
+    outline: none;
+}
+
+.lang-select option {
+    color: #000;
+}
+
+body.bg-gradient {
+    background: linear-gradient(135deg, #a16ae8, #6b3fa0);
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    min-height: 100vh;
+}
+a {
+    color: #a16ae8;
+    text-decoration: none;
+}
+a:hover {
+    color: #d8b9ff;
+}
+
+/* === Nombre + Logo alineados === */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e3e9ff;
+}
+
+.logo-text {
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    color: #e3e9ff;
+}
+
+/* Imagen del logo */
+.logo-img {
+    width: 36px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.08);
+}
+
+/* === Footer Redes Sociales === */
+.footer {
+    background: #0b0427;
+    text-align: center;
+    padding: 25px 15px;
+    color: #e3e9ff;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer a {
+    color: #a16ae8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #d8b9ff;
+}
+
+/* Íconos sociales */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #e3e9ff;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #a16ae8;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 10px;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 380px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.location-section {
+    padding: 40px 0;
+    background: #0d0221; /* acorde con tu tema púrpura oscuro */
+    border-radius: 20px;
+}
