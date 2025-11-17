@@ -1,10 +1,11 @@
 services:
   - type: web
     name: flex-gigs
-    runtime: php
+    env: docker
     plan: free
+    repo: https://github.com/AndresT13/FlexGigs-Laravel
     buildCommand: ""
-    startCommand: "heroku-php-apache2 public/"
+    startCommand: "vendor/bin/heroku-php-apache2 public/"
     autoDeploy: true
     envVars:
       - key: APP_ENV
