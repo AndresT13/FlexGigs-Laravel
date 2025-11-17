@@ -1,6 +1,7 @@
 services:
   - type: web
     name: flex-gigs
+    env: php
     plan: free
     repo: https://github.com/AndresT13/FlexGigs-Laravel
     buildCommand: ""
