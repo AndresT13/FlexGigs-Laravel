@@ -1,10 +1,12 @@
 <!-- Footer -->
     <footer>
-        <a href="./pages/privacy.html" data-lang="footer_privacy">Privacy</a>
+        <a href="{{route('privacy')}}" data-lang="footer_privacy">Privacy</a>
         |
-        <a href="./pages/terms.html" data-lang="footer_terms">Terms of Use</a>
+        <a href="{{route('terms')}}" data-lang="footer_terms">Terms of Use</a>
         |
-        <a href="./pages/help.html" data-lang="footer_help">Help</a>
+        <a href="{{route('help')}}" data-lang="footer_help">Help</a>
+
+        
         <div class="social-icons">
             <a href="https://www.instagram.com/flex.gigs" target="_blank" aria-label="Instagram" class="social-link">
                 <i class="fab fa-instagram"></i>

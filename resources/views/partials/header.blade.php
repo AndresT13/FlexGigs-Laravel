@@ -14,7 +14,7 @@
         </nav>
 
         <div class="header-actions">
-            <a href="./pages/login.html" class="btn-login" data-lang="nav_login">Login</a>
+            <a href="{{route('login') }}" class="btn-login" data-lang="nav_login">Login</a>
 
             <select id="lang-selector" class="lang-select">
                 <option value="en">EN</option>

@@ -1,0 +1,62 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+
+
+
+
+    <h1>Login</h1>
+<form id="loginForm" action="/contacto" method="POST" novalidate>
+    <!-- TOKEN CSRF -->
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+
+    <!-- Nombre -->
+    <div class="mb-3">
+        <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="form-control"
+            placeholder="Enter your name"
+            required
+        />
+        <div class="invalid-feedback">Name is required.</div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+        <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+        />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+    </div>
+
+    <!-- Mensaje -->
+    <div class="mb-3">
+        <textarea
+            id="mensaje"
+            name="mensaje"
+            class="form-control"
+            placeholder="Write your message"
+            required
+        ></textarea>
+        <div class="invalid-feedback">Message is required.</div>
+    </div>
+
+    <!-- Tipo -->
+    <input type="hidden" name="tipo" value="login-contact" />
+
+    <!-- Botón -->
+    <button type="submit" class="btn btn-primary w-100">Send</button>
+</form>
+</div>
+
+
+@endsection

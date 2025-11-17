@@ -21,4 +21,11 @@
 
        <script src="{{ asset('main-page/js/news-lang.js') }}"></script>
 
+   
+          <script src="{{ asset('main-page/css/login.css') }}"></script>
+             <script src="{{ asset('main-page/css/help.css') }}"></script>
+                <script src="{{ asset('main-page/css/privacy.css') }}"></script>
+                   <script src="{{ asset('main-page/css/terms.css') }}"></script>   
+                 
+
 </head>
