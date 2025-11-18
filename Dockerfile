@@ -1,38 +1,28 @@
-# Imagen base oficial de PHP con Apache
+# Imagen base de PHP con Apache
 FROM php:8.3-apache
 
 # Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    zip \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    libzip-dev
+    zip unzip git curl libpng-dev libonig-dev libxml2-dev \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Instalar extensiones de PHP necesarias para Laravel
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
-
-# Habilitar mod_rewrite
+# Habilitar mod_rewrite para Laravel
 RUN a2enmod rewrite
 
-# Instalar Composer
+# Establecer directorio de trabajo
+WORKDIR /var/www/html
+
+# Copiar el composer desde la imagen oficial
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copiar TODO el proyecto
-COPY . /var/www/html/
+# Copiar todos los archivos del proyecto
+COPY . /var/www/html
 
 # Instalar dependencias de Laravel
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Permisos necesarios
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+# Ajustar permisos para Laravel
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Exponer puerto 80
+# Exponer puerto
 EXPOSE 80
-
-# Iniciar Apache
-CMD ["apache2-foreground"]
